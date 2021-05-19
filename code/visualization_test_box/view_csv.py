@@ -10,7 +10,7 @@ import argparse
 
 parser = argparse.ArgumentParser(description='')
 parser.add_argument('--csv', required=True, help='submission file')
-parser.add_argument('--stop', type=int, default=50, help='submission file')
+parser.add_argument('--stop', type=int, default=50, help='submission file') # max 838
 
 args = parser.parse_args()
 csv = pd.read_csv(args.csv)
@@ -80,7 +80,9 @@ for i in range(len(csv)):
             edgecolor=colors[int(o[0])], 
             facecolor='none')
         ax.add_patch(rect)
-        ax.text(o[2], o[3]-2-classes_pos[int(o[0])], classes[int(o[0])], color = colors[int(o[0])])
+        label = classes[int(o[0])]
+        text = f'{label}|{o[1]:0.2f}'
+        ax.text(o[2], o[3]-2-classes_pos[int(o[0])], text, color = colors[int(o[0])])
     fig.savefig(save_path, dpi=200, bbox_inches='tight')
     plt.close()
 
