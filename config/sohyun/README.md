@@ -1,0 +1,5 @@
+- `run_augtest_faster_rcnn_r50.py`: photometricdistortion 실험
+- `run_resnext_fpn_vfnet.py`: resnext+vfnet 모델 실험
+- `run_swin_b.py`: SwinTransformer B 모델 실험
+- `run_swin_b_retrain.py`: 기존 학습된 SwinTransformer 재학습 실험
+- `run_swin_t.py` : SwinTransformer T 모델 실험
